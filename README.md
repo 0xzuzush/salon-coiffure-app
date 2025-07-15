@@ -62,7 +62,7 @@ Une application web moderne et responsive pour la gestion des rendez-vous d'un s
 
 ### 1. Cloner le projet
 ```bash
-git clone [URL_DU_REPO]
+git clone https://github.com/0xzuzush/salon-coiffure-app.git
 cd salon-coiffure-app
 ```
 
