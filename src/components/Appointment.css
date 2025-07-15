@@ -1,0 +1,728 @@
+/* Appointment Component Styles */
+
+/* Main Container */
+.appointment {
+  min-height: 100vh;
+  background-color: var(--background-light);
+  padding: clamp(0.5rem, 2vh, 1rem) 0;
+  width: 100vw;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  box-sizing: border-box;
+}
+
+/* Header */
+.appointment-header {
+  text-align: center;
+  margin-bottom: clamp(1rem, 3vh, 2rem);
+  padding: 0 clamp(2vw, 4vw, 6vw);
+  width: 100vw;
+  box-sizing: border-box;
+}
+
+.appointment-header h1 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  color: var(--text-dark);
+  margin-bottom: clamp(1.5rem, 3vh, 2rem);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* Step Indicator */
+.step-indicator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(1rem, 3vw, 2rem);
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  opacity: 0.5;
+  transition: var(--transition);
+  min-width: 60px;
+}
+
+.step.active {
+  opacity: 1;
+}
+
+.step span {
+  width: clamp(35px, 5vw, 40px);
+  height: clamp(35px, 5vw, 40px);
+  border-radius: 50%;
+  background-color: var(--border-color);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: clamp(14px, 2vw, 16px);
+  transition: var(--transition);
+}
+
+.step.active span {
+  background-color: var(--primary-color);
+}
+
+.step p {
+  font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+  color: var(--text-light);
+  font-weight: 500;
+  text-align: center;
+}
+
+.step.active p {
+  color: var(--text-dark);
+}
+
+/* Content Container */
+.appointment-content {
+  width: 100vw;
+  margin: 0;
+  padding: 0 clamp(2vw, 4vw, 6vw);
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.step-content {
+  background: white;
+  border-radius: var(--border-radius);
+  padding: clamp(2rem, 4vw, 4rem);
+  box-shadow: var(--shadow);
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.step-content h2 {
+  color: var(--text-dark);
+  margin-bottom: 2rem;
+  text-align: center;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 600;
+}
+
+/* Calendar Styles */
+.calendar-container {
+  margin-bottom: 2rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  overflow-x: auto;
+  box-sizing: border-box;
+}
+
+.calendar-container .fc {
+  font-family: inherit;
+  width: 100%;
+  min-width: 250px;
+  box-sizing: border-box;
+}
+
+.fc-toolbar {
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center !important;
+}
+
+.fc-toolbar-chunk {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.fc-button-primary {
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+  font-size: clamp(0.7rem, 1.2vw, 0.85rem) !important;
+  padding: 0.4rem 0.8rem !important;
+}
+
+.fc-button-primary:hover {
+  background-color: var(--primary-dark) !important;
+  border-color: var(--primary-dark) !important;
+}
+
+.fc-daygrid-day {
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.fc-daygrid-day:hover {
+  background-color: var(--background-light);
+}
+
+.fc-day-selected {
+  background-color: var(--primary-color) !important;
+  color: white !important;
+}
+
+.selected-date {
+  text-align: center;
+  padding: clamp(0.75rem, 1.5vw, 1rem);
+  background-color: var(--background-light);
+  border-radius: var(--border-radius);
+  margin: 1rem auto;
+  max-width: min(400px, 90vw);
+  box-sizing: border-box;
+}
+
+.selected-date p {
+  color: var(--text-dark);
+  font-weight: 600;
+  margin-bottom: 1rem;
+  font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+}
+
+/* Form Sections */
+.form-section {
+  margin-bottom: clamp(1.5rem, 3vh, 2rem);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-section h3 {
+  color: var(--text-dark);
+  margin-bottom: clamp(0.75rem, 1.5vh, 1rem);
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
+  text-align: center;
+  font-weight: 600;
+}
+
+/* Services Grid */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(clamp(180px, 20vw, 300px), 1fr));
+  gap: clamp(1rem, 3vw, 2.5rem);
+  margin-bottom: 1.5rem;
+  justify-items: stretch;
+  width: 100%;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.service-option {
+  background: white;
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: clamp(1rem, 2.5vw, 1.5rem);
+  text-align: center;
+  cursor: pointer;
+  transition: var(--transition);
+  min-height: clamp(100px, 15vh, 140px);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.service-option:hover {
+  border-color: var(--primary-color);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover);
+}
+
+.service-option.selected {
+  border-color: var(--primary-color);
+  background-color: var(--primary-color);
+  color: white;
+  transform: translateY(-3px);
+}
+
+.service-option h4 {
+  margin-bottom: 0.5rem;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-weight: 600;
+}
+
+.service-option p {
+  font-size: clamp(0.85rem, 1.5vw, 0.95rem);
+  opacity: 0.8;
+  margin: 0.25rem 0;
+}
+
+.service-option .price {
+  font-weight: 700;
+  font-size: clamp(1rem, 2vw, 1.1rem);
+  opacity: 1;
+  margin-top: 0.5rem;
+}
+
+/* Stylists Grid */
+.stylists-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(clamp(180px, 20vw, 300px), 1fr));
+  gap: clamp(1rem, 3vw, 2.5rem);
+  margin-bottom: 1.5rem;
+  justify-items: stretch;
+  width: 100%;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.stylist-option {
+  background: white;
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: clamp(1rem, 2.5vw, 1.5rem);
+  text-align: center;
+  cursor: pointer;
+  transition: var(--transition);
+  min-height: clamp(80px, 12vh, 120px);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.stylist-option:hover {
+  border-color: var(--primary-color);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover);
+}
+
+.stylist-option.selected {
+  border-color: var(--primary-color);
+  background-color: var(--primary-color);
+  color: white;
+  transform: translateY(-3px);
+}
+
+.stylist-option h4 {
+  margin-bottom: 0.5rem;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-weight: 600;
+}
+
+.stylist-option p {
+  font-size: clamp(0.85rem, 1.5vw, 0.95rem);
+  opacity: 0.8;
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* Time Slots */
+.time-slots {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(clamp(60px, 8vw, 100px), 1fr));
+  gap: clamp(0.75rem, 2vw, 1.5rem);
+  justify-items: stretch;
+  width: 100%;
+  margin: 0 0 1.5rem 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.time-slot {
+  background: white;
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: clamp(0.5rem, 1.5vw, 1rem);
+  text-align: center;
+  cursor: pointer;
+  transition: var(--transition);
+  font-size: clamp(0.75rem, 1.8vw, 1rem);
+  min-height: clamp(35px, 6vh, 50px);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  box-sizing: border-box;
+}
+
+.time-slot:hover {
+  border-color: var(--primary-color);
+  background-color: var(--background-light);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.time-slot.selected {
+  border-color: var(--primary-color);
+  background-color: var(--primary-color);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Appointment Summary */
+.appointment-summary {
+  background-color: var(--background-light);
+  border-radius: var(--border-radius);
+  padding: clamp(1.5rem, 3vw, 2rem);
+  margin-bottom: 2rem;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.appointment-summary h3 {
+  color: var(--text-dark);
+  margin-bottom: 1.5rem;
+  font-size: clamp(1.2rem, 2.5vw, 1.4rem);
+  text-align: center;
+  font-weight: 600;
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border-color);
+  font-size: clamp(0.9rem, 1.8vw, 1rem);
+}
+
+.summary-item:last-child {
+  border-bottom: none;
+}
+
+.summary-item strong {
+  color: var(--text-dark);
+  font-weight: 600;
+}
+
+/* Form Styles */
+.appointment-form {
+  width: 100%;
+  margin: 0;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(clamp(200px, 40vw, 300px), 1fr));
+  gap: clamp(1rem, 3vw, 2rem);
+  margin-bottom: clamp(1rem, 2vh, 1.5rem);
+}
+
+.form-group {
+  margin-bottom: clamp(1rem, 2vh, 1.5rem);
+  width: 100%;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--text-dark);
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(212, 165, 116, 0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Step Navigation */
+.step-navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: clamp(2rem, 4vh, 3rem);
+  gap: clamp(1rem, 3vw, 2rem);
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 0;
+}
+
+.step-navigation button {
+  flex: 1;
+  min-width: clamp(100px, 20vw, 180px);
+  max-width: clamp(150px, 30vw, 250px);
+  padding: clamp(0.75rem, 2vw, 1.25rem) clamp(1rem, 3vw, 2rem);
+  font-size: clamp(0.85rem, 2vw, 1.1rem);
+}
+
+/* Loading States */
+.loading-slots {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-light);
+}
+
+.loading-slots::before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--border-color);
+  border-top: 2px solid var(--primary-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-right: 10px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* RESPONSIVE DESIGN - SYSTÈME AUTOMATIQUE */
+
+/* Interface Container Queries - Modern Approach */
+@container (max-width: 600px) {
+  .services-grid,
+  .stylists-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .time-slots {
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+  }
+}
+
+@container (min-width: 601px) and (max-width: 1000px) {
+  .services-grid,
+  .stylists-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@container (min-width: 1001px) {
+  .services-grid,
+  .stylists-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+/* Fallback Media Queries pour tous les appareils */
+
+/* Très petits écrans - Smartphones en portrait */
+@media (max-width: 480px) {
+  .appointment {
+    padding: 0.5rem 0;
+  }
+  
+  .appointment-content {
+    padding: 0 1vw;
+  }
+  
+  .step-content {
+    padding: clamp(1rem, 3vw, 1.5rem);
+    border-radius: 0;
+  }
+  
+  .services-grid,
+  .stylists-grid {
+    grid-template-columns: 1fr;
+    gap: clamp(0.75rem, 2vw, 1rem);
+  }
+  
+  .time-slots {
+    grid-template-columns: repeat(auto-fit, minmax(45px, 1fr));
+    gap: clamp(0.5rem, 1.5vw, 0.75rem);
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .step-navigation {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .step-navigation button {
+    width: 100%;
+  }
+}
+
+/* Smartphones en paysage et petites tablettes */
+@media (min-width: 481px) and (max-width: 767px) {
+  .services-grid,
+  .stylists-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(1rem, 2.5vw, 1.5rem);
+  }
+  
+  .time-slots {
+    grid-template-columns: repeat(auto-fit, minmax(55px, 1fr));
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Tablettes */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .services-grid,
+  .stylists-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(1.5rem, 3vw, 2rem);
+  }
+  
+  .time-slots {
+    grid-template-columns: repeat(auto-fit, minmax(65px, 1fr));
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Écrans moyens - Laptops */
+@media (min-width: 1024px) and (max-width: 1439px) {
+  .services-grid,
+  .stylists-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(1.5rem, 3vw, 2.5rem);
+  }
+  
+  .time-slots {
+    grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
+  }
+}
+
+/* Grands écrans - Desktop */
+@media (min-width: 1440px) and (max-width: 1919px) {
+  .services-grid,
+  .stylists-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: clamp(2rem, 3vw, 2.5rem);
+  }
+  
+  .time-slots {
+    grid-template-columns: repeat(auto-fit, minmax(85px, 1fr));
+  }
+}
+
+/* Très grands écrans - 4K et Ultra-wide */
+@media (min-width: 1920px) {
+  .appointment-content {
+    padding: 0 clamp(4vw, 8vw, 12vw);
+  }
+  
+  .services-grid,
+  .stylists-grid {
+    grid-template-columns: repeat(5, 1fr);
+    gap: clamp(2rem, 4vw, 3rem);
+  }
+  
+  .time-slots {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+}
+
+/* Orientation spécifique */
+@media (orientation: landscape) and (max-height: 600px) {
+  .appointment {
+    padding: 0.25rem 0;
+  }
+  
+  .step-content {
+    padding: clamp(1rem, 2vh, 1.5rem) clamp(2rem, 4vw, 3rem);
+  }
+  
+  .services-grid,
+  .stylists-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}
+
+/* Adaptation automatique pour tous les ratios d'écran */
+@media (aspect-ratio: 16/9) {
+  .services-grid,
+  .stylists-grid {
+    grid-template-columns: repeat(auto-fit, minmax(clamp(200px, 18vw, 280px), 1fr));
+  }
+}
+
+@media (aspect-ratio: 4/3) {
+  .services-grid,
+  .stylists-grid {
+    grid-template-columns: repeat(auto-fit, minmax(clamp(180px, 22vw, 300px), 1fr));
+  }
+}
+
+@media (aspect-ratio: 21/9) {
+  .services-grid,
+  .stylists-grid {
+    grid-template-columns: repeat(auto-fit, minmax(clamp(160px, 15vw, 250px), 1fr));
+  }
+}
+
+/* Accessibility */
+.service-option:focus,
+.stylist-option:focus,
+.time-slot:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .service-option,
+  .stylist-option,
+  .time-slot {
+    border-width: 3px;
+  }
+  
+  .service-option.selected,
+  .stylist-option.selected,
+  .time-slot.selected {
+    background-color: #000;
+    color: #fff;
+    border-color: #000;
+  }
+}
+
+/* Optimisations pour écrans Retina */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .service-option,
+  .stylist-option,
+  .time-slot {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+}
+
+/* Corrections spécifiques pour Safari sur Mac */
+@supports (-webkit-appearance: none) {
+  .service-option,
+  .stylist-option,
+  .time-slot {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  
+  .appointment-form {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+}

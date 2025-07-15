@@ -1,0 +1,113 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Dependencies
+node_modules
+.pnpm
+.npm
+
+# Build outputs
+dist
+dist-ssr
+*.local
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Server uploads
+uploads/
+
+# Database
+*.sqlite
+*.db
+
+# Spécifique au salon de coiffure
+# Cache et temporaires
+.cache/
+.temp/
+.tmp/
+tmp/
+
+# Couverture de tests
+coverage/
+.nyc_output/
+*.lcov
+
+# Fichiers de sauvegarde
+*.backup
+*.bak
+*.swp
+*.swo
+*~
+
+# Fichiers système macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+
+# Fichiers système Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Fichiers système Linux
+*~
+.directory
+.Trash-*
+
+# Fichiers de configuration locaux
+config/local.json
+.eslintcache
+.stylelintcache
+
+# Fichiers de monitoring et logs
+pm2.log
+error.log
+access.log
+
+# Fichiers d'images temporaires/uploads
+uploads/*.jpg
+uploads/*.jpeg
+uploads/*.png
+uploads/*.gif
+uploads/*.webp
+!uploads/.gitkeep
+
+# Certificats SSL/TLS (si utilisés)
+*.pem
+*.key
+*.cert
+*.crt
+
+# Fichiers de session
+sessions/
+.sessions/
